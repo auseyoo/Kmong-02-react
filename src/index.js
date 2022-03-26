@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+console.log('사랑해');
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const h1Element = document.querySelector('h1');  // 첫번째놈
+const h1Elements = document.querySelectorAll('h1'); //모두
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+console.log('h1Elements:::::::', h1Elements);
+h1Element.addEventListener('dblclick', function () {
+    console.log('click해쏘!!!!!');
+})
+console.log('h1Element:::::', h1Element);
+
+
+for (let i = 0; i < h1Elements.length; i++) {
+    console.log(h1Elements[i]);
+    h1Elements[i].addEventListener('dblclick', function () {
+        console.log(i + h1Elements[i].innerHTML);
+    });
+}
